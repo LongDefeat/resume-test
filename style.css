@@ -1,0 +1,109 @@
+/* 
+======
+RESET
+======
+*/
+* {
+    box-sizing: border-box; /* this is to apply padding/margin inside of the element which "takes away" from the edge of the container https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+    margin: 0; /* this is a very basic reset to set margin on all elements to 0 */
+    padding: 0; /* same as above but with padding. this is my dev preference to work with everything being really snug and no extra white space unless i specifically call for it. */
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+}
+
+body {
+    background-color: #93CDE7;
+}
+
+
+/*
+======
+LAYOUT
+======
+*/
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main section {
+    padding: 2rem;
+}
+
+
+/*
+======
+HEADER
+======
+*/
+header {
+    padding-top: 3rem;
+}
+
+header .page-container {
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr;
+    align-items: center;
+    margin-bottom: -3rem;
+}
+
+.headshot img {
+    border-radius: 50%;
+    position: relative;
+    left: -50%;
+}
+
+header h1 {
+    position: relative;
+    left: calc(-75px + 2rem);
+    color: #fff;
+    font-size: 2.8rem;
+}
+
+header ul {
+    display: flex;
+    justify-content: flex-end;
+    /* align-items: center; */
+    list-style-type: none;
+}
+
+header a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #333;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 0.25rem;
+}
+
+header li:last-child a {
+    margin-right: 0;
+}
+
+/*
+==========
+INTRO COPY
+==========
+*/
+.intro-copy {
+    padding-top: 3rem;
+}
+
+/*
+=========
+UTILITIES
+=========
+*/
+.bg-color--white {
+    background-color: #fff;
+}
