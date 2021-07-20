@@ -4,22 +4,22 @@ RESET
 ======
 */
 * {
-    box-sizing: border-box; /* this is to apply padding/margin inside of the element which "takes away" from the edge of the container https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
-    margin: 0; /* this is a very basic reset to set margin on all elements to 0 */
-    padding: 0; /* same as above but with padding. this is my dev preference to work with everything being really snug and no extra white space unless i specifically call for it. */
+  box-sizing: border-box; /* this is to apply padding/margin inside of the element which "takes away" from the edge of the container https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+  margin: 0; /* this is a very basic reset to set margin on all elements to 0 */
+  padding: 0; /* same as above but with padding. this is my dev preference to work with everything being really snug and no extra white space unless i specifically call for it. */
 }
 
-html, body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #333;
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333;
 }
 
 body {
-    background-color: #93CDE7;
+  background-color: #93cde7;
 }
-
 
 /*
 ======
@@ -27,14 +27,13 @@ LAYOUT
 ======
 */
 .page-container {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 main section {
-    padding: 2rem;
+  padding: 2rem;
 }
-
 
 /*
 ======
@@ -42,52 +41,55 @@ HEADER
 ======
 */
 header {
-    padding-top: 3rem;
+  padding-top: 3rem;
 }
 
 header .page-container {
-    display: grid;
-    grid-template-columns: 150px 1fr 1fr;
-    align-items: center;
-    margin-bottom: -3rem;
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr;
+  align-items: center;
+  margin-bottom: -3rem;
 }
 
 .headshot img {
-    border-radius: 50%;
-    position: relative;
-    left: -50%;
+  border-radius: 50%;
+  position: relative;
+  left: -50%;
 }
 
 header h1 {
-    position: relative;
-    left: calc(-75px + 2rem);
-    color: #fff;
-    font-size: 2.8rem;
+  position: relative;
+  left: calc(-75px + 2rem);
+  color: #fff;
+  font-size: 2.8rem;
 }
 
 header ul {
-    display: flex;
-    justify-content: flex-end;
-    /* align-items: center; */
-    list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+  list-style-type: none;
 }
 
 header a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem;
-    background-color: #333;
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    text-decoration: none;
-    color: #fff;
-    margin-right: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-right: 1px solid whitesmoke;
+  text-decoration: none;
+  color: #fff;
+  margin-right: 0.25rem;
+  transition: background-color 200ms ease-out;
+}
+
+header a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 header li:last-child a {
-    margin-right: 0;
+  margin-right: 0;
+  border-right: 0;
 }
 
 /*
@@ -96,7 +98,7 @@ INTRO COPY
 ==========
 */
 .intro-copy {
-    padding-top: 3rem;
+  padding-top: 3rem;
 }
 
 /*
@@ -105,5 +107,32 @@ UTILITIES
 =========
 */
 .bg-color--white {
-    background-color: #fff;
+  background-color: #fff;
+}
+
+/*
+==========
+MEDIA QUERIES
+==========
+*/
+
+@media screen and (max-width: 600px) {
+  header .page-container {
+    grid-template-columns: 1fr;
+    margin-bottom: 0;
+  }
+  header h1 {
+    left: auto;
+    text-align: center;
+  }
+
+  header .navbar {
+    justify-content: center;
+  }
+
+  .headshot img {
+    left: auto;
+    margin: 0 auto;
+    display: block;
+  }
 }
