@@ -62,6 +62,7 @@ header h1 {
   left: calc(-75px + 2rem);
   color: #fff;
   font-size: 2.8rem;
+  animation: flyIn 1000ms ease-out forwards;
 }
 
 header ul {
@@ -92,6 +93,10 @@ header li:last-child a {
   border-right: 0;
 }
 
+footer.page-container {
+  padding: 0 5px;
+}
+
 /*
 ==========
 INTRO COPY
@@ -99,6 +104,26 @@ INTRO COPY
 */
 .intro-copy {
   padding-top: 3rem;
+}
+
+/*
+==========
+EXPERIENCE
+==========
+*/
+
+.list {
+  padding: 5px 30px;
+}
+
+/*
+==========
+EDUCATION
+==========
+*/
+
+.sublists {
+  padding: 5px 45px;
 }
 
 /*
@@ -134,5 +159,14 @@ MEDIA QUERIES
     left: auto;
     margin: 0 auto;
     display: block;
+  }
+}
+
+@keyframes flyIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
   }
 }
